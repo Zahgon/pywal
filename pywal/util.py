@@ -25,48 +25,47 @@ class Color:
     @property
     def rgb(self):
         """Convert a hex color to rgb."""
-        return "%s,%s,%s" % (*hex_to_rgb(self.hex_color),)
+        pass
 
     @property
     def xrgba(self):
         """Convert a hex color to xrdb rgba."""
-        return hex_to_xrgba(self.hex_color)
+        pass
 
     @property
     def rgba(self):
         """Convert a hex color to rgba."""
-        return "rgba(%s,%s,%s,%s)" % (*hex_to_rgb(self.hex_color),
-                                      self.alpha_dec)
+        pass
 
     @property
     def alpha(self):
         """Add URxvt alpha value to color."""
-        return "[%s]%s" % (self.alpha_num, self.hex_color)
+        pass
 
     @property
     def alpha_dec(self):
         """Export the alpha value as a decimal number in [0, 1]."""
-        return int(self.alpha_num) / 100
+        pass
 
     @property
     def decimal(self):
         """Export color in decimal."""
-        return "%s%s" % ("#", int(self.hex_color[1:], 16))
+        pass
 
     @property
     def decimal_strip(self):
         """Strip '#' from decimal color."""
-        return int(self.hex_color[1:], 16)
+        pass
 
     @property
     def octal(self):
         """Export color in octal."""
-        return "%s%s" % ("#", oct(int(self.hex_color[1:], 16))[2:])
+        pass
 
     @property
     def octal_strip(self):
         """Strip '#' from octal color."""
-        return oct(int(self.hex_color[1:], 16))[2:]
+        pass
 
     @property
     def strip(self):
@@ -76,32 +75,29 @@ class Color:
     @property
     def red(self):
         """Red value as float between 0 and 1."""
-        return "%.3f" % (hex_to_rgb(self.hex_color)[0]/255.)
+        pass
 
     @property
     def green(self):
         """Green value as float between 0 and 1."""
-        return "%.3f" % (hex_to_rgb(self.hex_color)[1]/255.)
+        pass
 
     @property
     def blue(self):
         """Blue value as float between 0 and 1."""
-        return "%.3f" % (hex_to_rgb(self.hex_color)[2]/255.)
+        pass
 
     def lighten(self, percent):
         """Lighten color by percent."""
-        percent = float(re.sub(r'[\D\.]', '', str(percent)))
-        return Color(lighten_color(self.hex_color, percent / 100))
+        pass
 
     def darken(self, percent):
         """Darken color by percent."""
-        percent = float(re.sub(r'[\D\.]', '', str(percent)))
-        return Color(darken_color(self.hex_color, percent / 100))
+        pass
 
     def saturate(self, percent):
         """Saturate a color."""
-        percent = float(re.sub(r'[\D\.]', '', str(percent)))
-        return Color(saturate_color(self.hex_color, percent / 100))
+        pass
 
 
 def read_file(input_file):
@@ -166,8 +162,7 @@ def hex_to_rgb(color):
 
 def hex_to_xrgba(color):
     """Convert a hex color to xrdb rgba."""
-    col = color.lower().strip("#")
-    return "%s%s/%s%s/%s%s/ff" % (*col,)
+    pass
 
 
 def rgb_to_hex(color):
@@ -213,7 +208,7 @@ def saturate_color(color, amount):
 
 def rgb_to_yiq(color):
     """Sort a list of colors."""
-    return colorsys.rgb_to_yiq(*hex_to_rgb(color))
+    pass
 
 
 def disown(cmd):

@@ -86,31 +86,7 @@ def flatten_colors(colors):
 
 def get_export_type(export_type):
     """Convert template type to the right filename."""
-    return {
-        "css": "colors.css",
-        "dmenu": "colors-wal-dmenu.h",
-        "dwm": "colors-wal-dwm.h",
-        "st": "colors-wal-st.h",
-        "tabbed": "colors-wal-tabbed.h",
-        "gtk2": "colors-gtk2.rc",
-        "json": "colors.json",
-        "konsole": "colors-konsole.colorscheme",
-        "kitty": "colors-kitty.conf",
-        "nqq": "colors-nqq.css",
-        "plain": "colors",
-        "putty": "colors-putty.reg",
-        "rofi": "colors-rofi.Xresources",
-        "scss": "colors.scss",
-        "shell": "colors.sh",
-        "speedcrunch": "colors-speedcrunch.json",
-        "sway": "colors-sway",
-        "tty": "colors-tty.sh",
-        "vscode": "colors-vscode.json",
-        "waybar": "colors-waybar.css",
-        "xresources": "colors.Xresources",
-        "xmonad": "colors.hs",
-        "yaml": "colors.yml",
-    }.get(export_type, export_type)
+    pass
 
 
 def every(colors, output_dir=CACHE_DIR):
@@ -132,14 +108,4 @@ def every(colors, output_dir=CACHE_DIR):
 
 def color(colors, export_type, output_file=None):
     """Export a single template file."""
-    all_colors = flatten_colors(colors)
-
-    template_name = get_export_type(export_type)
-    template_file = os.path.join(MODULE_DIR, "templates", template_name)
-    output_file = output_file or os.path.join(CACHE_DIR, template_name)
-
-    if os.path.isfile(template_file):
-        template(all_colors, template_file, output_file)
-        logging.info("Exported %s.", export_type)
-    else:
-        logging.warning("Template '%s' doesn't exist.", export_type)
+    pass
